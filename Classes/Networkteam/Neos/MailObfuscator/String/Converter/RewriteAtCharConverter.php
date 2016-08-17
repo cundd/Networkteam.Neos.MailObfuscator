@@ -22,6 +22,6 @@ class RewriteAtCharConverter implements EmailLinkNameConverterInterface {
 	 * @return string
 	 */
 	public function convert($emailAddress) {
-		return str_replace('@', ' (at) ', $emailAddress);
-	}
+        return str_replace('@', '<style>.at-replace:before{content:"@"}</style><span class="at-replace"></span>', $emailAddress);
+    }
 }
